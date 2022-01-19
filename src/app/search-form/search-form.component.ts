@@ -11,12 +11,29 @@ import {map, startWith} from 'rxjs/operators';
   styleUrls: ['./search-form.component.css']
 })
 export class SearchFormComponent implements OnInit {
-  myControl = new FormControl();
+  categoryControl = new FormControl();
+  minControl = new FormControl();
+  maxControl = new FormControl();
+
+  // Used for API request
+  category: string | undefined;
+  min: number | undefined;
+  max: number | undefined;
+
+
   options: string[] = ['Rénover une salle de bain', 'Rénover une cuisine', 'Rénover une chambre d\'enfant', 'Rénover ses toilettes'];
   filteredOptions: Observable<string[]> | undefined;
 
+  constructor(){}
+
+  onSubmit(){
+    this.category = this.categoryControl.value;
+    this.min = this.minControl.value;
+    this.max = this.maxControl.value;
+  }
+
   ngOnInit() {
-    this.filteredOptions = this.myControl.valueChanges.pipe(
+    this.filteredOptions = this.categoryControl.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value)),
     );
