@@ -1,0 +1,83 @@
+<!-- <form>
+    <div class="container">
+        <div class="row">
+            <p class="title"> Parlez nous de votre projet...</p>
+
+            <div class="form-floating mb-3">
+                <input type="text" placeholder="Pick one" aria-label="Number" matInput id="floatingInput"
+                    [formControl]="myControl" [matAutocomplete]="auto" class="form-control">
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                        {{option}}
+                    </mat-option>
+                </mat-autocomplete>
+                <label for="floatingInput">Email address</label>
+
+            </div>
+        </div>
+        <div class="row">
+
+            <p class="title">Définissez votre budget</p>
+
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+        </div>
+
+    </div>
+</form> -->
+<div class="container">
+    <div class="row">
+
+    </div>
+    <div class="row">
+
+    </div>
+</div >
+
+<div class="container">
+<form class="example-form">
+    <div class="row">
+        <p class="title"> Parlez nous de votre projet...</p>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Que voulez-vous faire ?</mat-label>
+      <input type="text"
+             placeholder="Pick one"
+             aria-label="Number"
+             matInput
+             [formControl]="myControl"
+             [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    </div>
+
+
+    <div class="row">
+        <p class="title"> Définissez votre budget </p>
+        <div class="form-floating d-flex">
+            <p>de</p>
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="floatingMin" placeholder="1000">
+                <label for="floatingMin">Min</label>
+            </div>
+            <p>à</p>
+            <div class="form-floating">
+                <input type="number" class="form-control" id="floatingMax" placeholder="2500">
+                <label for="floatingMax">Max</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <button type="submit" class="submitBtn">
+            C'est parti !
+        </button>
+    </div>
+
+  </form>
+</div>
