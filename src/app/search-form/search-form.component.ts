@@ -20,7 +20,6 @@ export class SearchFormComponent implements OnInit {
   min: number | undefined;
   max: number | undefined;
 
-
   options: string[] = ['Rénover une salle de bain', 'Rénover une cuisine', 'Rénover une chambre d\'enfant', 'Rénover ses toilettes'];
   filteredOptions: Observable<string[]> | undefined;
 
