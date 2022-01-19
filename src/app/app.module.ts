@@ -13,6 +13,8 @@ import { SearchPageComponent } from './search-page/search-page.component';
 import { ProjectOverviewComponent } from './project-overview/project-overview.component';
 import { ProfessionalOverviewComponent } from './professional-overview/professional-overview.component';
 import { CreateProjectComponent } from './create-project/create-project.component';
+import { ResultPageComponent } from './result-page/result-page.component';
+import { BlogPostComponent } from './blog-post/blog-post.component';
 
 
 
@@ -30,7 +32,9 @@ import { CreateProjectComponent } from './create-project/create-project.componen
     SearchPageComponent,
     ProjectOverviewComponent,
     CreateProjectComponent,
-    ProjectOverviewComponent
+    ProjectOverviewComponent,
+    ResultPageComponent,
+    BlogPostComponent
   ],
   imports: [
     BrowserModule,
