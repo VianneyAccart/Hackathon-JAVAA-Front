@@ -19,3 +19,18 @@ a {
   text-decoration: none;
 }
 
+/* Remove background color of Angular Material input */
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: white;
+    border: solid 1px lightgray;
+}
+
+/* Hide underline */
+.mat-form-field-underline {
+    display: none;
+    position: absolute;
+    width: 100%;
+    pointer-events: none;
+    transform: scale3d(1, 1.0001, 1);
+}
+

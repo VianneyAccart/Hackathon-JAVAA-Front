@@ -21,7 +21,7 @@ import { CreateProjectComponent } from './create-project/create-project.componen
     HeaderComponent,
     SearchFormComponent,
     HomepageComponent,
-    HeaderComponent
+    HeaderComponent,
     SearchPageComponent,
     ProjectOverviewComponent,
     CreateProjectComponent,
