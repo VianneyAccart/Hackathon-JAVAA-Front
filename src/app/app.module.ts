@@ -11,7 +11,11 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { ProjectOverviewComponent } from './project-overview/project-overview.component';
+
+import { ProfessionalOverviewComponent } from './professional-overview/professional-overview.component';
+
 import { CreateProjectComponent } from './create-project/create-project.component';
+
 
 
 @NgModule({
@@ -19,6 +23,12 @@ import { CreateProjectComponent } from './create-project/create-project.componen
     AppComponent,
     HomepageComponent,
     HeaderComponent,
+    professional-overview
+    SearchPageComponent,
+    ProjectOverviewComponent,
+    ProfessionalOverviewComponent
+
+
     SearchFormComponent,
     HomepageComponent,
     HeaderComponent,
@@ -26,6 +36,7 @@ import { CreateProjectComponent } from './create-project/create-project.componen
     ProjectOverviewComponent,
     CreateProjectComponent,
     ProjectOverviewComponent
+
   ],
   imports: [
     BrowserModule,
