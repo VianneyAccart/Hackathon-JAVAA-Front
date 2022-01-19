@@ -8,10 +8,22 @@ import { SearchFormComponent } from './search-form/search-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 
+import { HomepageComponent } from './homepage/homepage.component';
+import { HeaderComponent } from './header/header.component';
+
+import { SearchPageComponent } from './search-page/search-page.component';
+import { ProjectOverviewComponent } from './project-overview/project-overview.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    SearchFormComponent
+    SearchFormComponent,
+    HomepageComponent,
+    HeaderComponent
+    SearchPageComponent,
+    ProjectOverviewComponent
+
   ],
   imports: [
     BrowserModule,
