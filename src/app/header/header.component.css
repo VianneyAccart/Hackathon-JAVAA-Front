@@ -1,7 +1,14 @@
 .header{
     display: block;
-    max-width:360px;
-    max-height: 667px;
-    margin: 0 auto;
-    
+    width: 100%; 
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.backhome {
+    width: 130px;
+    height: 35px;
+    position: absolute;
 }

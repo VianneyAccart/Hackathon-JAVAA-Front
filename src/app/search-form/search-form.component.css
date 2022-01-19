@@ -1,0 +1,18 @@
+.title {
+  color: #253b82;
+  font-weight: 500;
+}
+
+.submitBtn {
+  height: 50px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  background-color: #253b82;
+  color: white;
+}
+
+.min {
+    margin-right: 20px;
+}
+
