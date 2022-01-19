@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchFormComponent } from './search-form/search-form.component';
@@ -11,9 +11,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { ProjectOverviewComponent } from './project-overview/project-overview.component';
-
 import { ProfessionalOverviewComponent } from './professional-overview/professional-overview.component';
-
 import { CreateProjectComponent } from './create-project/create-project.component';
 
 
@@ -23,12 +21,9 @@ import { CreateProjectComponent } from './create-project/create-project.componen
     AppComponent,
     HomepageComponent,
     HeaderComponent,
-    professional-overview
     SearchPageComponent,
     ProjectOverviewComponent,
-    ProfessionalOverviewComponent
-
-
+    ProfessionalOverviewComponent,
     SearchFormComponent,
     HomepageComponent,
     HeaderComponent,
@@ -36,7 +31,6 @@ import { CreateProjectComponent } from './create-project/create-project.componen
     ProjectOverviewComponent,
     CreateProjectComponent,
     ProjectOverviewComponent
-
   ],
   imports: [
     BrowserModule,
@@ -46,7 +40,6 @@ import { CreateProjectComponent } from './create-project/create-project.componen
     FormsModule,
     MatInputModule,
     MatAutocompleteModule
-    
   ],
   providers: [],
   bootstrap: [AppComponent]
