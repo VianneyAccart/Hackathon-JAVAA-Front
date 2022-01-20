@@ -8,7 +8,7 @@ import { Product } from '../model/product';
 export class ProductService {
 
   baseUrl: string;
-  products = [];
+  products:any = [];
 
   constructor(private http: HttpClient) {
     this.baseUrl = "http://localhost:8080/"
@@ -17,9 +17,12 @@ export class ProductService {
    public getProducts(){
     this.http.get(this.baseUrl+"products").subscribe(
       (response) =>{ 
-        console.log(response)
+        if(response =! undefined) {
+          this.products.push(response)
+        }
+        // console.log(response);
       }
     )
    }
-   
+
 }

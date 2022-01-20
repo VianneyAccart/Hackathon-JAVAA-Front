@@ -3,6 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { Category } from '../shared/model/categories';
+import { ProductService } from '../shared/services/product.service';
 
 
 
