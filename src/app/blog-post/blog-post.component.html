@@ -1,6 +1,6 @@
 <div *ngFor="let post of blogPost" class="card" style="width: 100%;">
     <a href="{{ post.url }}">
-    <img class="card-img-top" src="{{ post.image }}" alt="Card image cap">
+    <img class="card-img-top" src="{{ imageUrl + post.image }}" alt="Card image cap">
     <div class="card-body">
         <p class="card-title bold" title="{{ post.title }}">{{ (post.title.length > 69) ? (post.title |
             slice:0:69)+'...': (post.title) }}</p>
