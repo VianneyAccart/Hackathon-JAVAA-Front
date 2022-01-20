@@ -1,9 +1,13 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { Category } from '../shared/model/categories';
+import { CategoryService } from '../shared/services/category.service';
 import { ProductService } from '../shared/services/product.service';
+import { SearchService } from '../shared/services/search.service';
 
 
 
@@ -16,27 +20,35 @@ export class SearchFormComponent implements OnInit {
   categoryControl = new FormControl();
   minControl = new FormControl();
   maxControl = new FormControl();
-  categories:Category[] = [
-    new Category(1,"Rénover une salle de bain")
-  ]
+  baseUrl:string = "http://localhost:8080/project-category/budget";
   
-
   options: string[] = ['Rénover une salle de bain', 'Rénover une cuisine', 'Rénover une chambre d\'enfant', 'Rénover ses toilettes'];
   filteredOptions: Observable<string[]> | undefined;
 
+  
+
+  constructor(private http:HttpClient,private router: Router, private searchService:SearchService) {
+    this.options.forEach(option => {})
+   }
 
 
-  constructor() { }
 
   onSubmit() {
     const request = new FormData();
-    request.append("projectCategoryId", this.categoryControl.value);
+    let optionBecomesId:string = "";
+    if(this.categoryControl.value === 'Rénover une salle de bain') optionBecomesId = '1';
+    if(this.categoryControl.value === 'Rénover une cuisine') optionBecomesId = '2';
+    if(this.categoryControl.value === 'Rénover une chambre d\'enfant') optionBecomesId = '3';
+    if(this.categoryControl.value === 'Rénover ses toilettes') optionBecomesId = '4';
+    request.append("projectCategoryId", optionBecomesId);
     request.append("budgetMin", this.minControl.value);
     request.append("budgetMax", this.maxControl.value);
+    request.append("projectCategoryName", this.categoryControl.value)
 
-    for (let pair of request.entries()) {
-      console.log(pair[0] + ':' + pair[1]);
-    }
+   
+    this.searchService.search(request);
+    
+    this.router.navigate(['/resultats']);
   }
 
   ngOnInit() {

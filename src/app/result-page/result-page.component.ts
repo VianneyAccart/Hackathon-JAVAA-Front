@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from '../shared/services/search.service';
 
 
 @Component({
@@ -9,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 export class ResultPageComponent implements OnInit {
 
   openedNewSearchMenu: boolean;
+  searchProperties: FormData|undefined; 
 
-  constructor() {
+  constructor(private searchService: SearchService) {
     this.openedNewSearchMenu = false;
+    this.searchProperties = this.searchService.searchProperties;
+
   }
 
   ngOnInit(): void {}
