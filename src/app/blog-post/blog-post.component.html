@@ -1,4 +1,4 @@
-<div *ngFor="let post of blogPost" class="card" style="width: 100%;">
+<div *ngFor="let post of blogPost.slice(0, 1)" class="card">
     <a href="{{ post.url }}">
     <img class="card-img-top" src="{{ imageUrl + post.image }}" alt="Card image cap">
     <div class="card-body">
