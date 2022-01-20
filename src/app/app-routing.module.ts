@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CreateProjectComponent } from './create-project/create-project.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ResultPageComponent } from './result-page/result-page.component';
+import { ProfessionalComponent } from './professional/professional.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 
 const routes: Routes = [
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: "resultats",
     component: ResultPageComponent
+  },
+  {
+    path: "professional",
+    component: ProfessionalComponent
   }
 ];
 
