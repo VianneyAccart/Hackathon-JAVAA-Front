@@ -1,12 +1,22 @@
 <div class="d-flex">
-    <div *ngFor="let project of projects" class="card">
-        <a routerLink="/projet/{{project.id}}">
-            <img class="card-img-top" src="{{ imageUrl + project.images[0].name }}"
-                alt="Une réalisation de {{ project.user.firstName }}">
-            <div class="card-body">
-                <p class="card-title">Réalisé par : {{ project.user.firstName }}</p>
-                <p class="card-title">Budget : {{ project.budget }}€</p>
-            </div>
-        </a>
+  <ng-container *ngIf="projects.projects[0] !== null">
+    <div *ngFor="let project of projects.projects" class="card">
+      <a routerLink="/projet/{{ project.id }}">
+        <img
+          class="card-img-top"
+          src="{{ imageUrl + project.images[0].name }}"
+          alt="Une réalisation de {{ project.user.firstName }}"
+        />
+        <div class="card-body">
+          <p class="card-title">Réalisé par : {{ project.user.firstName }}</p>
+          <p class="card-title">Budget : {{ project.budget }}€</p>
+        </div>
+      </a>
     </div>
+  </ng-container>
+  <ng-container *ngIf="projects.projects[0] == null">
+    <p class="text-center">
+      Désolé, aucun projet ne correspond à vos critères de recherche.
+    </p>
+  </ng-container>
 </div>

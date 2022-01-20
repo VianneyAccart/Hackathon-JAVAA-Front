@@ -5,19 +5,18 @@ import { ProjectService } from '../shared/services/project.service';
 @Component({
   selector: 'app-project-overview',
   templateUrl: './project-overview.component.html',
-  styleUrls: ['./project-overview.component.css']
+  styleUrls: ['./project-overview.component.css'],
 })
 export class ProjectOverviewComponent implements OnInit {
-
-  projects : any;
+  projects: any;
   imageUrl: string = imagesUrl;
 
-  constructor(private projectsService: ProjectService) { 
-  }
+  constructor(private projectsService: ProjectService) {}
 
   ngOnInit(): void {
-    this.projectsService.getProjects().subscribe(response => {
-      this.projects = response;
-    });
+    // this.projectsService.getProjects().subscribe(response => {
+    //   this.projects = response;
+    // });
+    this.projects = this.projectsService.getProjects();
   }
 }

@@ -10,37 +10,44 @@ import { CategoryService } from '../shared/services/category.service';
 import { ProductService } from '../shared/services/product.service';
 import { SearchService } from '../shared/services/search.service';
 
-
-
 @Component({
   selector: 'app-search-form',
   templateUrl: './search-form.component.html',
-  styleUrls: ['./search-form.component.css']
+  styleUrls: ['./search-form.component.css'],
 })
 export class SearchFormComponent implements OnInit {
   categoryControl = new FormControl();
   minControl = new FormControl();
   maxControl = new FormControl();
-  options: string[] = ['Rénover une salle de bain', 'Rénover une cuisine', 'Rénover une chambre d\'enfant', 'Rénover ses toilettes'];
+  options: string[] = [
+    'Rénover une salle de bain',
+    'Rénover une cuisine',
+    "Rénover une chambre d'enfant",
+    'Rénover ses toilettes',
+  ];
   filteredOptions: Observable<string[]> | undefined;
 
   constructor(private router: Router, private searchService: SearchService) {}
 
   onSubmit() {
     const request = new FormData();
-    let optionBecomesId:string = "";
-    if(this.categoryControl.value === 'Rénover une salle de bain') optionBecomesId = '1';
-    if(this.categoryControl.value === 'Rénover une cuisine') optionBecomesId = '2';
-    if(this.categoryControl.value === 'Rénover une chambre d\'enfant') optionBecomesId = '3';
-    if(this.categoryControl.value === 'Rénover ses toilettes') optionBecomesId = '4';
-    request.append("projectCategoryId", optionBecomesId);
-    request.append("budgetMin", this.minControl.value);
-    request.append("budgetMax", this.maxControl.value);
-    request.append("projectCategoryName", this.categoryControl.value)
+    let optionBecomesId: string = '';
+    if (this.categoryControl.value === 'Rénover une salle de bain')
+      optionBecomesId = '1';
+    if (this.categoryControl.value === 'Rénover une cuisine')
+      optionBecomesId = '2';
+    if (this.categoryControl.value === "Rénover une chambre d'enfant")
+      optionBecomesId = '3';
+    if (this.categoryControl.value === 'Rénover ses toilettes')
+      optionBecomesId = '4';
+    request.append('projectCategoryId', optionBecomesId);
+    request.append('budgetMin', this.minControl.value);
+    request.append('budgetMax', this.maxControl.value);
+    request.append('projectCategoryName', this.categoryControl.value);
 
     this.searchService.search(request);
-    
-    if (this.router.url !== "/resultats") {
+
+    if (this.router.url !== '/resultats') {
       this.router.navigate(['/resultats']);
     } else {
       let currentUrl = this.router.url;
@@ -53,13 +60,15 @@ export class SearchFormComponent implements OnInit {
   ngOnInit() {
     this.filteredOptions = this.categoryControl.valueChanges.pipe(
       startWith(''),
-      map(value => this._filter(value)),
+      map((value) => this._filter(value))
     );
   }
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
-    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+    return this.options.filter((option) =>
+      option.toLowerCase().includes(filterValue)
+    );
   }
 }

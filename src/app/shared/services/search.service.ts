@@ -11,10 +11,9 @@ export class SearchService {
   constructor(private http: HttpClient) {}
 
   search(formData: FormData) {
-    this.searchProperties = formData;
-    this.http.post(this.baseUrl, formData).subscribe(
-      (response) => console.log(response),
-      (error) => console.log(error)
-    );
+    this.http.post(this.baseUrl, formData).subscribe((data) => {
+      const dataToStock = JSON.stringify(data);
+      localStorage.setItem('data', dataToStock);
+    });
   }
 }
