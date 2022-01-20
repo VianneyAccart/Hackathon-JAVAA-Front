@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { Category } from '../shared/model/categories';
 
 
 
@@ -14,11 +15,10 @@ export class SearchFormComponent implements OnInit {
   categoryControl = new FormControl();
   minControl = new FormControl();
   maxControl = new FormControl();
-
-  // Used for API request
-  category: string | undefined;
-  min: number | undefined;
-  max: number | undefined;
+  categories:Category[] = [
+    new Category(1,"Rénover une salle de bain")
+  ]
+  
 
   options: string[] = ['Rénover une salle de bain', 'Rénover une cuisine', 'Rénover une chambre d\'enfant', 'Rénover ses toilettes'];
   filteredOptions: Observable<string[]> | undefined;
@@ -29,9 +29,9 @@ export class SearchFormComponent implements OnInit {
 
   onSubmit() {
     const request = new FormData();
-    request.append("category", this.categoryControl.value);
-    request.append("min", this.minControl.value);
-    request.append("max", this.maxControl.value);
+    request.append("projectCategoryId", this.categoryControl.value);
+    request.append("budgetMin", this.minControl.value);
+    request.append("budgetMax", this.maxControl.value);
 
     for (let pair of request.entries()) {
       console.log(pair[0] + ':' + pair[1]);
