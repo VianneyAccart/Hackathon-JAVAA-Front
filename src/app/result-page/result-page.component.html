@@ -11,8 +11,8 @@
         <div [ngClass]="{'active' : openedNewSearchMenu}" class="newSearchMenu py-5">
             <app-search-form></app-search-form>
         </div>
-        <p>Rénover une salle de bain</p>
-        <p class="budget">Budget : entre 1500€ et 4500€</p>
+        <p>{{searchProperties?.get("projectCategoryName")}}</p>
+        <p class="budget">Budget : entre {{searchProperties?.get("budgetMin")}}€ et {{searchProperties?.get("budgetMax")}}€</p>
     </div>
 </div>
 
