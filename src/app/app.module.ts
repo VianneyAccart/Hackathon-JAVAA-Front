@@ -18,6 +18,7 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductOverviewComponent } from './product-overview/product-overview.component';
 import { ProfessionalComponent } from './professional/professional.component';
+import { ProjectComponent } from './project/project.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,9 @@ import { ProfessionalComponent } from './professional/professional.component';
     ResultPageComponent,
     BlogPostComponent,
     ProductOverviewComponent,
-    ProfessionalComponent
+    ProfessionalComponent,
+    ProjectComponent
+    
   ],
   imports: [
     BrowserModule,
