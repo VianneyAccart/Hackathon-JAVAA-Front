@@ -16,4 +16,8 @@ export class ProjectService {
   public getProjects(): Observable<any> {
     return this.http.get<any>(this.baseUrl + 'projects');
   }
+
+  public getProjectById(id: number): Observable<any> {
+    return this.http.get<any>(this.baseUrl + 'projects/' + id);
+  }
 }

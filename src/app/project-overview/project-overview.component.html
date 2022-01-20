@@ -1,6 +1,6 @@
 <div class="d-flex">
     <div *ngFor="let project of projects" class="card">
-        <a routerLink="/project">
+        <a routerLink="/projet/{{project.id}}">
             <img class="card-img-top" src="{{ imageUrl + project.images[0].name }}"
                 alt="Une réalisation de {{ project.user.firstName }}">
             <div class="card-body">
