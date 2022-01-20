@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { asLiteral } from '@angular/compiler/src/render3/view/util';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -20,18 +21,10 @@ export class SearchFormComponent implements OnInit {
   categoryControl = new FormControl();
   minControl = new FormControl();
   maxControl = new FormControl();
-  baseUrl:string = "http://localhost:8080/project-category/budget";
-  
   options: string[] = ['Rénover une salle de bain', 'Rénover une cuisine', 'Rénover une chambre d\'enfant', 'Rénover ses toilettes'];
   filteredOptions: Observable<string[]> | undefined;
 
-  
-
-  constructor(private http:HttpClient,private router: Router, private searchService:SearchService) {
-    this.options.forEach(option => {})
-   }
-
-
+  constructor(private router: Router, private searchService: SearchService) {}
 
   onSubmit() {
     const request = new FormData();
@@ -45,10 +38,17 @@ export class SearchFormComponent implements OnInit {
     request.append("budgetMax", this.maxControl.value);
     request.append("projectCategoryName", this.categoryControl.value)
 
-   
     this.searchService.search(request);
     
-    this.router.navigate(['/resultats']);
+    if (this.router.url !== "/resultats") {
+      this.router.navigate(['/resultats']);
+    } else {
+      let currentUrl = this.router.url;
+      console.log(currentUrl);
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+      this.router.onSameUrlNavigation = 'reload';
+      this.router.navigate([currentUrl]);
+    }
   }
 
   ngOnInit() {

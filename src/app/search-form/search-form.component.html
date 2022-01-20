@@ -18,18 +18,20 @@
             <p class="title">Définissez votre budget</p>
             <div class="form-floating d-flex align-items-center mb-3">
                 <div class="form-floating min">
-                    <input type="number" required [formControl]="minControl" class="form-control" id="floatingMin" placeholder="1000" min="0">
-                    <label for="floatingMin">De</label>
+                    <input type="number" required [formControl]="minControl" class="form-control" id="floatingMin"
+                        placeholder="1000" min="0">
+                    <label for="floatingMin">De<span class="mandatory"> *</span></label>
                 </div>
                 <div class="form-floating">
-                    <input type="number" required [formControl]="maxControl" class="form-control" id="floatingMax" placeholder="2500" min="0">
-                    <label for="floatingMax">A</label>
+                    <input type="number" required [formControl]="maxControl" class="form-control" id="floatingMax"
+                        placeholder="2500" min="0">
+                    <label for="floatingMax">A<span class="mandatory"> *</span></label>
                 </div>
             </div>
         </div>
 
         <div class="btn-container d-flex justify-content-center mt-3">
-            <button type="submit" class="submitBtn" >
+            <button type="submit" class="submitBtn">
                 C'est parti !
             </button>
         </div>
