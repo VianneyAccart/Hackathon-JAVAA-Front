@@ -1,4 +1,4 @@
-export class Category {
+export class Image {
   private _id: number;
   private _name: string;
 
@@ -8,34 +8,34 @@ export class Category {
   }
 
   /**
-   * Getter $id
+   * Getter id
    * @return {number}
    */
-  public get $id(): number {
+  public get id(): number {
     return this._id;
   }
 
   /**
-   * Getter $name
+   * Getter name
    * @return {string}
    */
-  public get $name(): string {
+  public get name(): string {
     return this._name;
   }
 
   /**
-   * Setter $id
+   * Setter id
    * @param {number} value
    */
-  public set $id(value: number) {
+  public set id(value: number) {
     this._id = value;
   }
 
   /**
-   * Setter $name
+   * Setter name
    * @param {string} value
    */
-  public set $name(value: string) {
+  public set name(value: string) {
     this._name = value;
   }
 }
