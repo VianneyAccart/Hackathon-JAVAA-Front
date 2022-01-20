@@ -1,0 +1,26 @@
+button{
+    max-width: 300px;
+    min-height: 40px;
+    display: block;
+    margin: 0 auto;
+    background-color: #253B82;
+    border-radius: 10px;
+}
+.professionalPicture{
+    display: block;
+    width: 100%; 
+}
+
+.title{
+    margin: 30px 0 0px 10px; 
+}
+
+.description {
+ margin-left: 10px;
+ margin-right: 10px;
+ font-size: 15px;
+}
+
+
+
+
