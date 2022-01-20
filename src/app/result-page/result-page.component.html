@@ -3,11 +3,16 @@
         <div class="d-flex justify-content-between mb-4">
             <h1 class="mb-3">Votre projet</h1>
             <div class="new-search-btn d-flex">
-                <p class="text">Modifier</p>
+                <!-- When clicking on the button, a new search panel appears/disappears -->
+                <p (click)="openNewSearchMenu()" class="text">{{ openedNewSearchMenu ? 'Fermer' : 'Modifier' }}</p>
             </div>
         </div>
+        <!-- New search panel is open when openedNewSearchMenu === true, close by default -->
+        <div [ngClass]="{'active' : openedNewSearchMenu}" class="newSearchMenu py-5">
+            <app-search-form></app-search-form>
+        </div>
         <p>Rénover une salle de bain</p>
-        <p>Budget : entre 1500€ et 4500€</p>
+        <p class="budget">Budget : entre 1500€ et 4500€</p>
     </div>
 </div>
 
@@ -39,7 +44,7 @@
 
 <div class="container">
     <div class="row mt-3 mb-5">
-        <h2>Pour bien démarrer</h2>
+        <h2 class="mb-3">Pour bien démarrer</h2>
         <app-blog-post></app-blog-post>
     </div>
 </div>
