@@ -1,28 +1,19 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import { Product } from '../model/product';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class ProductService {
 
+export class ProductService {
   baseUrl: string;
-  products:any = [];
 
   constructor(private http: HttpClient) {
-    this.baseUrl = "http://localhost:8080/"
-   }
+    this.baseUrl = 'http://localhost:8080/';
+  }
 
-   public getProducts(){
-    this.http.get(this.baseUrl+"products").subscribe(
-      (response) =>{ 
-        if(response =! undefined) {
-          this.products.push(response)
-        }
-        // console.log(response);
-      }
-    )
-   }
-
+  public getProducts(): Observable<any> {
+    return this.http.get<any>(this.baseUrl + 'products');
+  }
 }

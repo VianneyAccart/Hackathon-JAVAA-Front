@@ -9,7 +9,7 @@ export class Project {
     private _productProjectCategory:ProductProjectCategory[];
     private _user: User;
     private _professionals: Professional[];
-    private _budget: number; 
+    private _budget: number;
 
     constructor(id: number, createdAt: Date, productProjectCategory : ProductProjectCategory[], user: User, professionals : Professional[], budget:number ) {
         this._id = id;
@@ -20,7 +20,6 @@ export class Project {
         this._budget= budget;
     }
 
-    
       /**
      * Getter id
      * @return {number}

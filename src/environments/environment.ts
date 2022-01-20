@@ -3,10 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-url : 'http://localhost:8080/',
-imagesUrl : 'http://localhost:8080/api/file/'
+  production: false
 };
+
+export const url = 'http://localhost:8080/';
+export const imagesUrl = 'http://localhost:8080/api/file/';
 
 /*
  * For easier debugging in development mode, you can import the following file
