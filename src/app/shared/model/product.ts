@@ -7,7 +7,8 @@ export class Product{
         title: string ,
         price: number,
         picture:any
-        ) {
+        ) 
+        {
             this.title = title;
             this.price = price;  
             this.picture = picture;
