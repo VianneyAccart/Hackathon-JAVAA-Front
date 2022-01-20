@@ -22,6 +22,7 @@ import { ProfessionalComponent } from './professional/professional.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ProjectComponent } from './project/project.component';
+import { ProductUnavoidableOverviewComponent } from './product-unavoidable-overview/product-unavoidable-overview.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { ProjectComponent } from './project/project.component';
     BlogPostComponent,
     ProductOverviewComponent,
     ProfessionalComponent,
-    ProjectComponent
+    ProjectComponent,
+    ProductUnavoidableOverviewComponent
     
   ],
   imports: [

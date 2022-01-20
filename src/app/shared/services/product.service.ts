@@ -16,4 +16,8 @@ export class ProductService {
   public getProducts(): Observable<any> {
     return this.http.get<any>(this.baseUrl + 'products');
   }
+
+  public getUnavoidableProducts(): Observable<any> {
+    return this.http.get<any>(this.baseUrl + 'products/unavoidable');
+  }
 }
