@@ -10,16 +10,15 @@ import { SearchPageComponent } from './search-page/search-page.component';
 import { ProjectOverviewComponent } from './project-overview/project-overview.component';
 import { ProfessionalOverviewComponent } from './professional-overview/professional-overview.component';
 import { CreateProjectComponent } from './create-project/create-project.component';
+import { ResultPageComponent } from './result-page/result-page.component';
+import { BlogPostComponent } from './blog-post/blog-post.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductOverviewComponent } from './product-overview/product-overview.component';
 import { ProfessionalComponent } from './professional/professional.component';
 import { ProjectComponent } from './project/project.component';
-
-
-
 
 @NgModule({
   declarations: [
@@ -34,6 +33,9 @@ import { ProjectComponent } from './project/project.component';
     HeaderComponent,
     SearchPageComponent,
     CreateProjectComponent,
+    ProjectOverviewComponent,
+    ResultPageComponent,
+    BlogPostComponent,
     ProductOverviewComponent,
     ProfessionalComponent,
     ProjectComponent

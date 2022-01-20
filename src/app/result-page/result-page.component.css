@@ -1,0 +1,59 @@
+h1 {
+  color: #253b82;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.container {
+  padding: 0 20px;
+}
+
+.new-search-btn {
+  width: 120px;
+  height: 35px;
+  background-color: #253b82;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.text {
+  margin: auto;
+}
+
+.slider {
+  width: 100%;
+  height: auto;
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.budget {
+  margin-top: -15px;
+}
+
+/* Panel containing the filters for the new search */
+.newSearchMenu {
+  display: block;
+  background-color: white;
+  height: auto;
+  z-index: 2;
+  position: absolute;
+  top: 16rem;
+  width: 100%;
+  transition: 0.5s;
+  left: -100%;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* When the panel is open, left goes from -100% to 0 therefore becomes visible */
+.newSearchMenu.active {
+  /* The active class is added via the method openNewSearchMenu() */
+  left: 0;
+}

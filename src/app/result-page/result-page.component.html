@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="row mt-4">
+        <div class="d-flex justify-content-between mb-4">
+            <h1 class="mb-3">Votre projet</h1>
+            <div class="new-search-btn d-flex">
+                <!-- When clicking on the button, a new search panel appears/disappears -->
+                <p (click)="openNewSearchMenu()" class="text">{{ openedNewSearchMenu ? 'Fermer' : 'Modifier' }}</p>
+            </div>
+        </div>
+        <!-- New search panel is open when openedNewSearchMenu === true, close by default -->
+        <div [ngClass]="{'active' : openedNewSearchMenu}" class="newSearchMenu py-5">
+            <app-search-form></app-search-form>
+        </div>
+        <p>Rénover une salle de bain</p>
+        <p class="budget">Budget : entre 1500€ et 4500€</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt-3">
+        <h2>Les incontournables</h2>
+        <div class="slider mt-3 mb-4">
+            <app-project-overview></app-project-overview>
+            <app-project-overview></app-project-overview>
+            <app-project-overview></app-project-overview>
+            <app-project-overview></app-project-overview>
+            <app-project-overview></app-project-overview>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt-3">
+        <h2>Projets similaires réalisés</h2>
+        <div class="slider mt-3 mb-4">
+            <app-project-overview></app-project-overview>
+            <app-project-overview></app-project-overview>
+            <app-project-overview></app-project-overview>
+            <app-project-overview></app-project-overview>
+            <app-project-overview></app-project-overview>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt-3 mb-5">
+        <h2 class="mb-3">Pour bien démarrer</h2>
+        <app-blog-post></app-blog-post>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt-3">
+        <h2>Produits les plus utilisés</h2>
+        <div class="slider mt-3 mb-4">
+            <app-project-overview></app-project-overview>
+            <app-project-overview></app-project-overview>
+            <app-project-overview></app-project-overview>
+            <app-project-overview></app-project-overview>
+            <app-project-overview></app-project-overview>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt-3">
+        <h2>Besoin d'un professionel ?</h2>
+        <div class="slider mt-3 mb-4">
+            <app-professional-overview></app-professional-overview>
+            <app-professional-overview></app-professional-overview>
+            <app-professional-overview></app-professional-overview>
+            <app-professional-overview></app-professional-overview>
+            <app-professional-overview></app-professional-overview>
+        </div>
+    </div>
+</div>
