@@ -1,7 +1,12 @@
-<div class="card" style="width: 15rem;">
-    <a href="https://chop-ton-job.web.app"><img class="card-img-top" src="/assets/img/bathroom-test.jpeg" alt="Card image cap"></a>
-    <div class="card-body">
-        <p class="card-title">Réalisé par : Adam</p>
-        <p class="card-title">Budget : ~4200€</p>
+<div class="d-flex">
+    <div *ngFor="let project of projects" class="card">
+        <a routerLink="/project">
+            <img class="card-img-top" src="{{ imageUrl + project.images[0].name }}"
+                alt="Une réalisation de {{ project.user.firstName }}">
+            <div class="card-body">
+                <p class="card-title">Réalisé par : {{ project.user.firstName }}</p>
+                <p class="card-title">Budget : {{ project.budget }}€</p>
+            </div>
+        </a>
     </div>
 </div>
