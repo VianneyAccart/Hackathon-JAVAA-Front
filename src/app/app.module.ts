@@ -18,7 +18,11 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductOverviewComponent } from './product-overview/product-overview.component';
 import { ProfessionalComponent } from './professional/professional.component';
+
+import { HttpClientModule } from '@angular/common/http';
+
 import { ProjectComponent } from './project/project.component';
+
 
 @NgModule({
   declarations: [
@@ -48,7 +52,8 @@ import { ProjectComponent } from './project/project.component';
     BrowserAnimationsModule,
     FormsModule,
     MatInputModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
