@@ -1,16 +1,22 @@
 <div class="container">
-  <div class="row  title">
-    <h1>Paint&Go</h1>
-    <br />
-    <p>Activité : peintre</p>
+  <div class="row mt-3">
+    <a routerLink="/resultats">
+      < Revenir à votre projet </a>
   </div>
-  <div class="row">
-      <img class="professionalPicture" src="./assets/img/paintAndGo.png" alt="professional's picture">
+</div>
+
+<div class="container">
+  <div class="row mt-4">
+    <h1>{{ professional.name }}</h1>
+    <p>Activité : {{ professional.activity.name }}</p>
   </div>
-  <div class="row description">
-      <p >
-        Pour tous vos besoins en peinture : salon, chambre, salle de bain... Vous pouvez nous contacter et nous vous apporterons nos conseils pour réaliser au mieux votre projet.
-      </p>
-    <button type="submit"> Contacter </button>
-  </div>
+</div>
+
+<div class="container">
+  <img src="{{ imageUrl + professional.image }}" alt="Image de l'entreprise {{ professional.name }}">
+</div>
+
+<div class="container mt-4">
+  <p>{{ professional.description }}</p>
+  <button type="submit" class="submitBtn mt-3"> Contacter </button>
 </div>

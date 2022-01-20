@@ -44,7 +44,6 @@ export class SearchFormComponent implements OnInit {
       this.router.navigate(['/resultats']);
     } else {
       let currentUrl = this.router.url;
-      console.log(currentUrl);
       this.router.routeReuseStrategy.shouldReuseRoute = () => false;
       this.router.onSameUrlNavigation = 'reload';
       this.router.navigate([currentUrl]);
