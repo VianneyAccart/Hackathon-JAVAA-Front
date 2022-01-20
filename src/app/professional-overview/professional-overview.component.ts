@@ -9,7 +9,9 @@ import { Professional } from '../shared/model/professional';
 export class ProfessionalOverviewComponent implements OnInit {
   professionals : Professional[] | undefined;
 
-  constructor() { }
+  constructor() { 
+    
+  }
 
   ngOnInit(): void {
   }
