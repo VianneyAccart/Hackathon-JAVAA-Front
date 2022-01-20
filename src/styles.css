@@ -17,6 +17,7 @@ h4 {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 /* Remove background color of Angular Material input */
