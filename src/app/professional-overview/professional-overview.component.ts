@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { imagesUrl } from 'src/environments/environment';
 import { Professional } from '../shared/model/professional';
+import { ProfessionalService } from '../shared/services/professional.service';
 
 @Component({
   selector: 'app-professional-overview',
@@ -7,13 +9,15 @@ import { Professional } from '../shared/model/professional';
   styleUrls: ['./professional-overview.component.css']
 })
 export class ProfessionalOverviewComponent implements OnInit {
-  professionals : Professional[] | undefined;
+  professionals : any;
+  imageUrl: string = imagesUrl;
 
-  constructor() { 
-    
+  constructor(private professionalService: ProfessionalService) { 
   }
 
   ngOnInit(): void {
+    this.professionalService.getProfessionals().subscribe(response => {
+      this.professionals = response;
+    });
   }
-
 }

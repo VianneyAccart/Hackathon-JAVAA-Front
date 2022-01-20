@@ -1,7 +1,12 @@
-<div class="card" style="width: 15rem;">
-  <a href="https://chop-ton-job.web.app"><img class="card-img-top" src="/assets/img/bathroom-test.jpeg" alt="Card image cap"></a>
-  <div class="card-body">
-      <p class="card-title bold">Paint&Go</p>
-      <p class="card-title">Peintre</p>
+<div class="d-flex">
+  <div *ngFor="let professional of professionals" class="card" style="width: 15rem;">
+      <a routerLink="/professional">
+          <img class="card-img-top" src="{{ imageUrl + professional.image }}" alt="Image du professionnel {{ professional.name }}">
+          <div class="card-body">
+              <p class="card-title" title="{{ professional.name }}">{{ (professional.name.length > 42) ? (professional.name |
+                  slice:0:42)+'...': (professional.name) }}</p>
+              <p class="card-title bold">{{ professional.activity.name }}</p>
+          </div>
+      </a>
   </div>
 </div>
