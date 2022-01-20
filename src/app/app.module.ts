@@ -18,6 +18,7 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductOverviewComponent } from './product-overview/product-overview.component';
 import { ProfessionalComponent } from './professional/professional.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ProfessionalComponent } from './professional/professional.component';
     BrowserAnimationsModule,
     FormsModule,
     MatInputModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
