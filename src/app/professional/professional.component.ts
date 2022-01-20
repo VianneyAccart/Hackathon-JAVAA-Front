@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { imagesUrl } from 'src/environments/environment';
+import { ProfessionalService } from '../shared/services/professional.service';
 
 @Component({
   selector: 'app-professional',
@@ -7,9 +11,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfessionalComponent implements OnInit {
 
-  constructor() { }
+  routeSub: Subscription | undefined;
+  professional : any;
+  imageUrl: string = imagesUrl;
 
-  ngOnInit(): void {
+  constructor(private professionalService: ProfessionalService, private route: ActivatedRoute) { 
   }
 
+  ngOnInit(): void {
+    this.routeSub = this.route.params.subscribe((params) => {
+      this.professionalService.getProfessionalById(params["id"]).subscribe(response => {
+        this.professional = response;
+      });
+    })
+  }
 }

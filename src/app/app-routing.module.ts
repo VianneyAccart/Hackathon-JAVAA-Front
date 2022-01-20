@@ -25,12 +25,12 @@ const routes: Routes = [
     component: ResultPageComponent
   },
   {
-    path: "professional",
-    component:ProfessionalComponent
+    path: "professionel/:id",
+    component: ProfessionalComponent
   },
   {
-    path:"project",
-    component:ProjectComponent
+    path: "projet/:id",
+    component: ProjectComponent
   }
 ];
 

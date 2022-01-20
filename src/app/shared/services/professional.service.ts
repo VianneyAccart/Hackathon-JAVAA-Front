@@ -16,4 +16,8 @@ export class ProfessionalService {
   public getProfessionals(): Observable<any> {
     return this.http.get<any>(this.baseUrl + 'professionals');
   }
+
+  public getProfessionalById(id: number): Observable<any> {
+    return this.http.get<any>(this.baseUrl + 'professionals/' + id);
+  }
 }
