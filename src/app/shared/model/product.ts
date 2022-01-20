@@ -1,64 +1,78 @@
-export class Product{
-    private title: string;
-    private price: number ;
-    private picture:any;
+export class Product {
     
-    constructor(
-        title: string ,
-        price: number,
-        picture:any
-        ) 
-        {
-            this.title = title;
-            this.price = price;  
-            this.picture = picture;
-        }
-           /**
-     * Getter $title
-     * @return {string}
-     */
-	public get $title(): string {
-		return this.title;
-	}
+  private _title: string;
+  private _price: number;
+  private _image: string;
+  private _url: string;
 
-    /**
-     * Getter $price
-     * @return {number }
-     */
-	public get $price(): number  {
-		return this.price;
-	}
+  constructor(title: string, price: number, image: string, url: string) {
+    this._title = title;
+    this._price = price;
+    this._image = image;
+    this._url = url;
+  }
 
-    /**
-     * Getter $picture
-     * @return {any}
-     */
-	public get $picture(): any {
-		return this.picture;
-	}
+  /**
+   * Getter title
+   * @return {string}
+   */
+  public get title(): string {
+    return this._title;
+  }
 
-    /**
-     * Setter $title
-     * @param {string} value
-     */
-	public set $title(value: string) {
-		this.title = value;
-	}
+  /**
+   * Getter price
+   * @return {number}
+   */
+  public get price(): number {
+    return this._price;
+  }
 
-    /**
-     * Setter $price
-     * @param {number } value
-     */
-	public set $price(value: number ) {
-		this.price = value;
-	}
+  /**
+   * Getter image
+   * @return {string}
+   */
+  public get image(): string {
+    return this._image;
+  }
 
-    /**
-     * Setter $picture
-     * @param {any} value
-     */
-	public set $picture(value: any) {
-		this.picture = value;
-	} 
-       
-    }
+  /**
+   * Getter url
+   * @return {string}
+   */
+  public get url(): string {
+    return this._url;
+  }
+
+  /**
+   * Setter title
+   * @param {string} value
+   */
+  public set title(value: string) {
+    this._title = value;
+  }
+
+  /**
+   * Setter price
+   * @param {number} value
+   */
+  public set price(value: number) {
+    this._price = value;
+  }
+
+  /**
+   * Setter image
+   * @param {string} value
+   */
+  public set image(value: string) {
+    this._image = value;
+  }
+
+  /**
+   * Setter url
+   * @param {string} value
+   */
+  public set url(value: string) {
+    this._url = value;
+  }
+}
