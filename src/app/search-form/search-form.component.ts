@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
 
 
 
@@ -23,12 +23,19 @@ export class SearchFormComponent implements OnInit {
   options: string[] = ['Rénover une salle de bain', 'Rénover une cuisine', 'Rénover une chambre d\'enfant', 'Rénover ses toilettes'];
   filteredOptions: Observable<string[]> | undefined;
 
-  constructor(){}
 
-  onSubmit(){
-    this.category = this.categoryControl.value;
-    this.min = this.minControl.value;
-    this.max = this.maxControl.value;
+
+  constructor() { }
+
+  onSubmit() {
+    const request = new FormData();
+    request.append("category", this.categoryControl.value);
+    request.append("min", this.minControl.value);
+    request.append("max", this.maxControl.value);
+
+    for (let pair of request.entries()) {
+      console.log(pair[0] + ':' + pair[1]);
+    }
   }
 
   ngOnInit() {
