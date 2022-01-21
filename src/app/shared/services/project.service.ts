@@ -12,9 +12,9 @@ export class ProjectService {
     this.baseUrl = 'http://localhost:8080/';
   }
 
-  // public getProjects(): Observable<any> {
-  //   return this.http.get<any>(this.baseUrl + 'projects');
-  // }
+  public getAllProjects(): Observable<any> {
+    return this.http.get<any>(this.baseUrl + 'projects');
+  }
 
   public getProjects() {
     let dataToStringify = localStorage.getItem('data');

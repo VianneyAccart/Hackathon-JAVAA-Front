@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { asLiteral } from '@angular/compiler/src/render3/view/util';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -50,10 +50,15 @@ export class SearchFormComponent implements OnInit {
     if (this.router.url !== '/resultats') {
       this.router.navigate(['/resultats']);
     } else {
-      let currentUrl = this.router.url;
-      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-      this.router.onSameUrlNavigation = 'reload';
-      this.router.navigate([currentUrl]);
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
+
+      // let currentUrl = this.router.url;
+      // this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+      // this.router.onSameUrlNavigation = 'reload';
+
+      // this.router.navigate([currentUrl]);
     }
   }
 

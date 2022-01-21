@@ -23,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { ProjectComponent } from './project/project.component';
 import { ProductUnavoidableOverviewComponent } from './product-unavoidable-overview/product-unavoidable-overview.component';
+import { ProjectSearchPageComponent } from './project-search-page/project-search-page.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { ProductUnavoidableOverviewComponent } from './product-unavoidable-overv
     ProductOverviewComponent,
     ProfessionalComponent,
     ProjectComponent,
-    ProductUnavoidableOverviewComponent
+    ProductUnavoidableOverviewComponent,
+    ProjectSearchPageComponent
     
   ],
   imports: [

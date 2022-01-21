@@ -1,5 +1,5 @@
 <div class="d-flex">
-  <ng-container *ngIf="projects.projects[0] !== null">
+  <ng-container *ngIf="projects.projects.length > 0">
     <div *ngFor="let project of projects.projects" class="card">
       <a routerLink="/projet/{{ project.id }}">
         <img
@@ -14,9 +14,7 @@
       </a>
     </div>
   </ng-container>
-  <ng-container *ngIf="projects.projects[0] == null">
-    <p class="text-center">
-      Désolé, aucun projet ne correspond à vos critères de recherche.
-    </p>
+  <ng-container *ngIf="projects.projects.length === 0">
+    <p>Désolé, aucun projet ne correspond à vos critères de recherche</p>
   </ng-container>
 </div>
